@@ -8,7 +8,6 @@ export function extractWeatherData(rawData) {
     datetime: c.datetime,
     conditions: c.conditions,
     temp: Math.round(c.temp),
-    feelsLike: Math.round(c.feelslike),
     humidity: c.humidity,
     icon: c.icon,
   };
