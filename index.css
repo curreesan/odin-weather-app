@@ -58,3 +58,25 @@ button {
 #humidity {
   font-size: 20px;
 }
+
+.hidden {
+  display: none;
+}
+
+.big {
+  font-size: 40px;
+  font-weight: bold;
+}
+.huge {
+  font-size: 100px;
+  font-weight: bold;
+}
+#loading,
+#error-message {
+  text-align: center;
+  font-size: 24px;
+  margin: 30px 0;
+}
+#error-message {
+  color: #e74c3c;
+}

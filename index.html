@@ -21,7 +21,11 @@
           <button type="submit">Search</button>
         </form>
       </header>
-      <section class="weather-details">
+
+      <div id="loading" class="hidden">Loading...</div>
+      <div id="error-message" class="hidden"></div>
+
+      <section class="weather-details hidden" id="current-weather">
         <div id="city-name">Tokyo</div>
         <div id="temperature">29</div>
         <div id="date-time">07:00:00</div>
