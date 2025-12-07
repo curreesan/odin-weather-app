@@ -8,8 +8,13 @@ export function extractWeatherData(rawData) {
     datetime: c.datetime,
     conditions: c.conditions,
     temp: Math.round(c.temp),
-    humidity: c.humidity,
+    humidity: Math.round(c.humidity),
     icon: c.icon,
+    days: rawData.days.slice(1, 6).map((day) => ({
+      date: day.datetime,
+      icon: day.icon,
+      temp: Math.round(day.temp),
+    })),
   };
 
   console.log(weatherObject);

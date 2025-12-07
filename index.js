@@ -27,14 +27,35 @@ form.addEventListener("submit", async (e) => {
     const w = extractWeatherData(raw);
 
     // Update all fields
-    document.getElementById("city-name").textContent = w.city;
-    document.getElementById("temperature").textContent = `${w.temp}°F`;
-    document.getElementById("date-time").textContent = w.datetime;
-    document.getElementById("condition").textContent = w.conditions;
-    document.getElementById("humidity").textContent = `H: ${w.humidity}%`;
+    const cityName = document.getElementById("city-name");
+    const temperature = document.getElementById("temperature");
+    const date = document.getElementById("date-time");
+    const condition = document.getElementById("condition");
+    const humidity = document.getElementById("humidity");
+    const forecast = document.getElementById("forecast");
+
+    cityName.textContent = w.city;
+    temperature.textContent = `${w.temp}°F`;
+    date.textContent = w.datetime;
+    condition.textContent = w.conditions;
+    humidity.textContent = `H: ${w.humidity}%`;
+
+    w.days.forEach((day) => {
+      const card = document.createElement("div");
+      card.className = "forecast-card";
+
+      card.innerHTML = `
+            <div class="day"> ${day.date} </div>
+            <div class="temperature"> ${day.temp} </div>
+            <div class="condition"> ${day.icon} </div>
+        `;
+
+      forecast.appendChild(card);
+    });
 
     section.classList.remove("hidden");
   } catch (err) {
+    console.log(err);
     errorMsg.textContent = "City not found — try Tokyo, London, Paris...";
     errorMsg.classList.remove("hidden");
   } finally {
