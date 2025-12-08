@@ -5,7 +5,7 @@
 }
 
 .container {
-  padding-top: 50px;
+  padding-top: 20px;
   margin: 0 auto;
   max-width: 1200px;
 }
@@ -24,6 +24,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 10px;
 }
 
 .weather-input-heading {
@@ -50,13 +51,26 @@ button {
 }
 
 #temperature {
-  font-size: 100px;
+  font-size: 90px;
+}
+
+#forecast {
+  margin-top: 100px;
+
+  display: flex;
+  gap: 100px;
+
+  font-size: 30px;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 #date-time,
 #condition,
 #humidity {
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .hidden {
@@ -67,16 +81,23 @@ button {
   font-size: 40px;
   font-weight: bold;
 }
+
 .huge {
   font-size: 100px;
   font-weight: bold;
 }
+
+.small {
+  font-size: 20px;
+}
+
 #loading,
 #error-message {
   text-align: center;
   font-size: 24px;
   margin: 30px 0;
 }
+
 #error-message {
   color: #e74c3c;
 }
